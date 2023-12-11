@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de compra</title>
+    <link rel="stylesheet" href="compar.css">
+    <script src="https://kit.fontawesome.com/16daf1f8bf.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3ff5f3edd5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+</head>
+
+<body>
+    <!-- <header id="header">
+        <div class="container">
+
+            <div class="logo">
+                <a href="PaginaPrincipal.html"> <img src="2.ico" alt=""></a>
+               
+            </div>
+
+
+
+            <nav class="menu">
+            
+                <a href="PaginaPrincipal.html">INICIO</a>
+                <div>
+                    <a href=""><i class="fa-light fa-heart" style="color: #ff8d66;"></i></a>
+                </div>
+                <div>
+                    <a href=""><i class="fa-light fa-box" style="color: #ff8d66;"></i></a>
+                </div>
+                <div>
+                    <a href="login.html"><i class="fa-solid fa-user" style="color: #ff8d66;"></i></a>
+                </div>
+            </nav>
+            
+
+            
+        </div>
+    </header> -->
+    <header>
+        <nav>
+          <a class="logo" href="PaginaPrincipal.html"><img src="logo.png" alt=""></a>
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="PaginaPrincipal.html">INICIO</a></li>
+               <li><a href="Premium.html">PACOTES</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-user" style="color: #ff8d66;"></i></a></li>
+         
+             
+          </ul>
+        </nav>
+      </header>
+
+    <div class="wrapper">
+        <div class="payment">
+            <div class="payment-logo">
+                <img src="logo.png" alt="">
+            </div>
+
+
+            <h2>Página de Pagamento</h2>
+            <div class="form">
+                <div class="card space icon-relative">
+                    <label class="label">Código do Produto:</label>
+                    <input type="text" class="input" placeholder="Código do Produto">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="card space icon-relative">
+                    <label class="label">Titular do cartão:</label>
+                    <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Titular do cartão">
+                    <i class="far fa-credit-card"></i>
+                </div>
+            
+                <br>
+                <div class="card-grp space">
+                    <div class="card-item icon-relative">
+                        <label class="label">Data de validade:</label>
+                        <input type="text" name="expiry-data" class="input" placeholder="00 / 00">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <div class="card-item icon-relative">
+                        <label class="label">CVC:</label>
+                        <input type="text" class="input" data-mask="000" placeholder="000">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+
+                <div class="btn">
+                    <a href="comprainalizada.html" class="btn">
+                        Comprar
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script>
+    class MobileNavbar {
+  constructor(mobileMenu, navList, navLinks) {
+    this.mobileMenu = document.querySelector(mobileMenu);
+    this.navList = document.querySelector(navList);
+    this.navLinks = document.querySelectorAll(navLinks);
+    this.activeClass = "active";
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  animateLinks() {
+    this.navLinks.forEach((link, index) => {
+      link.style.animation
+        ? (link.style.animation = "")
+        : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.3
+          }s`);
+    });
+  }
+
+  handleClick() {
+    this.navList.classList.toggle(this.activeClass);
+    this.mobileMenu.classList.toggle(this.activeClass);
+    this.animateLinks();
+  }
+
+  addClickEvent() {
+    this.mobileMenu.addEventListener("click", this.handleClick);
+  }
+
+  init() {
+    if (this.mobileMenu) {
+      this.addClickEvent();
+    }
+    return this;
+  }
+}
+
+const mobileNavbar = new MobileNavbar(
+  ".mobile-menu",
+  ".nav-list",
+  ".nav-list li",
+);
+mobileNavbar.init();
+</script>
+ 
+</body>
+
+</html>
